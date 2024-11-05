@@ -1,75 +1,51 @@
-## AWS Critical Thinking Projects
-## AWS Critical Thinking Projects
-## Critical Thinking Project: Dynamic Scaling in AWS Auto Scaling
-Scenario: You are managing the infrastructure for an e-commerce website. During peak shopping hours, the website experiences a significant increase in traffic, leading to a strain on the server resources. To address this, you need to implement dynamic scaling using AWS Auto Scaling to ensure optimal performance and cost-effectiveness.
 
-![image3](https://github.com/user-attachments/assets/4ca54182-3799-4d79-b0bf-4db7658c389f)
+BEFORE RUNING THE AUTOSCALING GROUP, WE NEED TO SET UP SOME INFRASTRUCTURE
 
-
-# This is what is in the image, let explain highlighting the compenent of the infrastructrues  with text.
-
-# 53
-# Route 53
-# VPC
-# Internet gateway
-# Application load balancer
-# Availability 200 A
-# Availability zone
-# Pubic Subnet 1
-# Auto Scaling Group
-# Pubicubinet
-# Webserver
-# Webserver
-
-## AWS Architecture Components
-
-D53 (Route 53):
-
-Description: AWS Route 53 is a scalable and highly available Domain Name System (DNS) web service. It routes user requests to various resources, like EC2 instances or load balancers, based on defined routing policies (such as geolocation).
-Function: Helps ensure that users are directed to the nearest application endpoint for reduced latency and improved performance.
-## VPC (Virtual Private Cloud):
-
-* Description: A VPC is a virtual network dedicated to your AWS account. It allows you to provision a logically isolated section of the AWS cloud.
-* Function: Provides control over your virtual networking environment, including IP address range, subnets, route tables, and network gateways.
-
-## Internet Gateway:
-
-* Description: An Internet Gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between resources in your VPC and the internet.
-* Function: Enables instances in public subnets to connect to the internet, facilitating incoming and outgoing traffic.
+APPLICATION LOAD BALANCER WAS CREATED
+![Screenshot (146)](https://github.com/user-attachments/assets/f8a13623-093f-400b-8cb0-6765ed4a9b92)
+![Screenshot (166)](https://github.com/user-attachments/assets/15460c9c-8b58-4108-b259-f515ffb720c7)
 
 
-## Application Load Balancer (ALB):
-
-* Description: The ALB is a layer 7 load balancer that automatically distributes incoming application traffic across multiple targets, such as EC2 instances.
-* Function: Enhances the availability and fault tolerance of your application by distributing traffic based on the content of the request (e.g., URL path, HTTP headers).
-
-
-## Availability Zone (AZ):
-
-* Description: An Availability Zone is an isolated location within a region, designed to be independent from failures in other AZs.
-* Function: Deploying resources across multiple AZs increases fault tolerance and availability for your applications.
-Public Subnet:
-
-* Description: A public subnet is a segment of the VPC that is configured to allow direct access to and from the internet.
-* Function: Hosts resources that need to be accessible from the internet, such as web servers.
-Auto Scaling Group:
-
-* Description: An Auto Scaling Group automatically adjusts the number of EC2 instances based on demand.
-* Function: Ensures that your application can handle varying loads by adding or removing instances as needed, optimizing both performance and cost.
+VPC WAS CREATED
+![Screenshot (147)](https://github.com/user-attachments/assets/daa68bf3-6c06-4fc8-b266-cc2ef9d2a4af)
+![Screenshot (149)](https://github.com/user-attachments/assets/3960e88e-ab6a-49a6-a230-43ffed8145ac)
 
 
-## Web Server:
-
-* Description: Web servers are EC2 instances configured to host applications and serve content to users.
-* Function: Handle incoming requests, process them, and return responses (e.g., HTML pages, API responses).
-Summary of How They Work Together
-User Requests: Users access your application via the internet. Requests are directed to Route 53, which resolves the domain to the appropriate Application Load Balancer.
-Traffic Distribution: The ALB distributes incoming traffic to multiple Web Servers deployed in a Public Subnet. These web servers are hosted within a VPC, ensuring network isolation.
-Scaling and Availability: The Auto Scaling Group monitors the web servers and adjusts the number of instances based on traffic demand, ensuring that performance remains optimal.
-Redundancy and Fault Tolerance: By deploying resources across multiple Availability Zones, the architecture can withstand failures of individual components without impacting the overall application availability.
-
-## Conclusion
-This architecture leverages key AWS services to provide a robust, scalable, and highly available application environment. Each component plays a crucial role in ensuring that the application performs well and can adapt to changes in user demand while remaining accessible from anywhere on the internet. If you have any further questions or need additional details about any of these components, feel free to ask!
+PUBLIC SUBNET WAS CREATED
+![Screenshot (149)](https://github.com/user-attachments/assets/e92db1b9-61b4-48fb-b87c-780ae4cff81c)
 
 
+# LAUNCH TEMPLATE WAS CREATED
+![Screenshot (152)](https://github.com/user-attachments/assets/cc2b607d-7b48-45e6-b235-147b79328767)
+![Screenshot (153)](https://github.com/user-attachments/assets/eb396c9d-9f41-40c5-bed1-64927513823c)
 
+# SECURITY GROUP WAS CREATED
+!![Screenshot (156)](https://github.com/user-attachments/assets/94a9a328-6732-4f56-bdcd-0501bd62fe87)
+[Screenshot (155)](https://github.com/user-attachments/assets/0ffbfcca-1edb-4d38-9e05-3ed693a49a3b)
+
+
+# TARGET GROUP
+![Screenshot (158)](https://github.com/user-attachments/assets/71d0a7f5-7d79-4720-92ce-719882251c5e)
+
+
+# NOW GOING TO THE AUTOSCALING PROCESS
+![Screenshot (159)](https://github.com/user-attachments/assets/f12b2aaa-4102-40de-8119-cef42cc447f9)
+![Screenshot (160)](https://github.com/user-attachments/assets/dc3d588c-b38c-405f-837d-8cd7a5c9b4f5)
+![Screenshot (161)](https://github.com/user-attachments/assets/f9b8d2af-3ed5-4dce-a733-e2f892663e95)
+![Screenshot (162)](https://github.com/user-attachments/assets/8ff95d22-955f-498c-85d4-b08280571d8f)
+![Screenshot (171)](https://github.com/user-attachments/assets/651c86ec-78c6-43d6-b77d-558fb9e16369)
+![Screenshot (174)](https://github.com/user-attachments/assets/3dfddcd3-688d-4de0-871d-59c592e21e39)
+![Screenshot (172)](https://github.com/user-attachments/assets/f90e290c-7509-4083-bc18-8c75709d4ae6)
+
+
+# This is the point of selecting the target policy 
+![Screenshot (163)](https://github.com/user-attachments/assets/5f20e7b8-01c9-4786-8434-12b6a8f6272b)
+![Screenshot (163)](https://github.com/user-attachments/assets/92a874bb-4d8c-4ba2-a439-913806cd84e8)
+![Screenshot (164)](https://github.com/user-attachments/assets/a0105f6e-2252-47f6-a0a8-e7096e250db7)
+![Screenshot (174)](https://github.com/user-attachments/assets/17130276-3d02-442e-87ee-6de51e0f9a67)
+
+
+# AFTER LAUCHING THE AUTOSCALING AND CHECKING THE STATUS (MONITORING)
+![Screenshot (150)](https://github.com/user-attachments/assets/50d24526-0400-4456-bf26-5bf7b251a532)
+
+![Screenshot (151)](https://github.com/user-attachments/assets/90c8ed76-3ba9-4b9d-bd89-310ba198e7bd)
