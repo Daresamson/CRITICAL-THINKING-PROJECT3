@@ -1,17 +1,17 @@
 
-BEFORE RUNING THE AUTOSCALING GROUP, WE NEED TO SET UP SOME INFRASTRUCTURE
+# BEFORE RUNING THE AUTOSCALING GROUP, WE NEED TO SET UP SOME INFRASTRUCTURE
 
-APPLICATION LOAD BALANCER WAS CREATED
+# APPLICATION LOAD BALANCER WAS CREATED
 ![Screenshot (146)](https://github.com/user-attachments/assets/f8a13623-093f-400b-8cb0-6765ed4a9b92)
 ![Screenshot (166)](https://github.com/user-attachments/assets/15460c9c-8b58-4108-b259-f515ffb720c7)
 
 
-VPC WAS CREATED
+# VPC WAS CREATED
 ![Screenshot (147)](https://github.com/user-attachments/assets/daa68bf3-6c06-4fc8-b266-cc2ef9d2a4af)
 ![Screenshot (149)](https://github.com/user-attachments/assets/3960e88e-ab6a-49a6-a230-43ffed8145ac)
 
 
-PUBLIC SUBNET WAS CREATED
+# PUBLIC SUBNET WAS CREATED
 ![Screenshot (149)](https://github.com/user-attachments/assets/e92db1b9-61b4-48fb-b87c-780ae4cff81c)
 
 
